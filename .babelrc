@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
+/*
+    You can use a transpiler like Babel to convert your ES module code to CommonJS syntax that Jest can understand. 
+    To do this, you'll need to install Babel and configure it to transpile your code.
+*/
