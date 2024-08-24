@@ -1,16 +1,17 @@
-const { test, expect } = require("@jest/globals");
-const { normalizeURL } = require("./crawl.mjs");
+import { test, expect } from "@jest/globals";
 
+
+// ES Module support is enabled using babel, because Babel to convert your ES module code to CommonJS syntax that Jest can understand
+//Jest doesn't support ES modules out of the box.
 
 // normalizeURL.test.js
-const normalizeURL = require('./normalizeURL');
+import normalizeURL from './crawl.js';
 
 describe('normalizeURL', () => {
     it('removes protocol (http/https)', () => {
         expect(normalizeURL('https://blog.boot.dev/path')).toBe('blog.boot.dev/path');
         expect(normalizeURL('http://blog.boot.dev/path')).toBe('blog.boot.dev/path');
     });
-
     it('removes trailing slashes', () => {
         expect(normalizeURL('https://blog.boot.dev/path/')).toBe('blog.boot.dev/path');
         expect(normalizeURL('http://blog.boot.dev/path/')).toBe('blog.boot.dev/path');
