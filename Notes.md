@@ -14,3 +14,13 @@
 - In our case, we're exporting the normalizeURL function from the crawl.js module.
 - By using module.exports, we're making the normalizeURL function a public API of the crawl.js module. 
 - This means that other parts of the application can import the crawl.js module and use the normalizeURL function.
+
+# In JavaScript, ESM stands for ECMAScript Module.
+
+ECMAScript Module (ESM) is a standard for packaging and importing JavaScript code, introduced in ECMAScript 2015 (ES6). It allows you to write modular, reusable, and maintainable code by importing and exporting functions, variables, and classes between JavaScript files.
+
+Key features of ESM:
+
+- Import: Import functions, variables, and classes from other JavaScript files using the import statement.
+- Export: Export functions, variables, and classes from a JavaScript file using the export statement.
+- Module scope: Each ESM has its own scope, which means that variables and functions defined in one module are not automatically available in other modules.
