@@ -5,14 +5,18 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest",
+    "build": "babel src --out-dir lib"
   },
   "author": "Abhishek raina",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
   },
-  "jest": {
-    "transform": {}
+  "dependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "save-dev": "^0.0.1-security"
   }
 }
