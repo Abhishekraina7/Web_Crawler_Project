@@ -5,7 +5,8 @@ import { test, expect } from "@jest/globals";
 //Jest doesn't support ES modules out of the box.
 
 // normalizeURL.test.js
-import normalizeURL from './crawl.js';
+
+const { normalizeURL } = require('./crawl');
 
 describe('normalizeURL', () => {
     it('removes protocol (http/https)', () => {
