@@ -4,7 +4,6 @@ export { getURLsFromHTML };
 
 function normalizeURL(url) {
     const urlObject = new URL(url);
-    const protocol = urlObject.protocol === 'http:' ? 'http://' : 'https://';
     const pathname = urlObject.pathname.replace(/\/$/, ''); // remove trailing slash
     const hostname = urlObject.hostname;
     return `${hostname}${pathname}`;
@@ -53,4 +52,6 @@ function getURLsFromHTML(htmlBody, baseURL) {
 
     return urls;
 }
+
+
 
