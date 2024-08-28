@@ -24,3 +24,24 @@ Key features of ESM:
 - Import: Import functions, variables, and classes from other JavaScript files using the import statement.
 - Export: Export functions, variables, and classes from a JavaScript file using the export statement.
 - Module scope: Each ESM has its own scope, which means that variables and functions defined in one module are not automatically available in other modules.
+
+# Dependencies and Dev-Dependencies
+
+## Dependencies (also known as Production Dependencies)
+
+dependencies are packages that your project needs to run in production. These are the packages that are required for your application to function correctly when it's deployed to a production environment. Examples of dependencies include:
+
+- Express.js (a web framework)
+- MongoDB (a database driver)
+- React (a front-end library)
+When you run npm install or yarn install, these dependencies are installed in the node_modules directory.
+
+## DevDependencies (also known as Development Dependencies)
+
+devDependencies are packages that are only needed during development, testing, or building of your project. These packages are not required for your application to function correctly in production. Examples of devDependencies include:
+
+- Jest (a testing framework)
+- ESLint (a code linter)
+- Webpack (a bundler)
+- 
+When you run npm install or yarn install, these devDependencies are also installed in the node_modules directory. However, when you run npm install --production or yarn install --production, devDependencies are not installed.
