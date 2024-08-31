@@ -1,12 +1,16 @@
 
 export { normalizeURL }; // this makes the normalizeURL function available to be used in other modules using 'import'
 export { getURLsFromHTML };
+export { crawlPage };
+
+const currentURL = ''
 
 function normalizeURL(url) {
     const urlObject = new URL(url);
     const pathname = urlObject.pathname.replace(/\/$/, ''); // remove trailing slash
     const hostname = urlObject.hostname;
-    return `${hostname}${pathname}`;
+    currentURL = `${hostname}${pathname}`;
+    return currentURL;
 }
 
 
@@ -53,5 +57,33 @@ function getURLsFromHTML(htmlBody, baseURL) {
     return urls;
 }
 
+async function crawlPage(URL) {
+    try {
+        const response = await fetch(currentURL, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'text/html',
+            }
+        })
+        const content_Type = response.headers.get('Content-Type')
+        // for status code error handling
+        if (response.status >= 400) {
+            console.error(`Error ${response.status}: ${response.statusText}`)
+        }
+        // for content_Type error handling
+        if (!content_Type || !content_Type.includes('text/html')) {
+            console.error('Error: Expected text/html content type, but got:', content_Type);
+        }
+        else {
+            const htmlstring = await response.text();
+            console.log(htmlstring); // Print the HTML response as a string
+            return htmlstring; // Return the HTML string if needed
+        }
 
+    } catch (err) {
+        console.log(`Tried but I catced this: ${err}`)
+    }
+}
+
+// crawlPage(currentURL)
 

@@ -1,4 +1,7 @@
 //This piece of code asks the user's name, and once the text is entered and the user presses enter, we send a greeting.
+const { crawlPage } = require('./crawl.js')
+
+const baseURL = 'https://wagslane.dev'
 
 function main(input) {
 
@@ -13,8 +16,7 @@ function main(input) {
 }
 
 main(2)
-
-
+crawlPage(baseURL)
 
 
 

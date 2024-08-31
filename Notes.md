@@ -43,5 +43,5 @@ devDependencies are packages that are only needed during development, testing, o
 - Jest (a testing framework)
 - ESLint (a code linter)
 - Webpack (a bundler)
-- 
+  
 When you run npm install or yarn install, these devDependencies are also installed in the node_modules directory. However, when you run npm install --production or yarn install --production, devDependencies are not installed.
